@@ -72,7 +72,7 @@ public class DocumentsService {
 //        String nombreArchivo = baseNameFile(file);
 
         // valido el archivo
-        logger.info("validación del file: {}", validarArchivo(file, documento));
+//        logger.info("validación del file: {}", validarArchivo(file, documento));
 
         String nombreArchivo= fileNameOriginal.substring(0, fileNameOriginal.lastIndexOf("."));
 
@@ -610,7 +610,13 @@ public class DocumentsService {
         }
 
         // compruebo que el contenido del archivo es de tipo pdf, word o imágen
-        if (!(fileType.equals("application/pdf") || fileType.equals("application/msword") || fileType.equals("application/vnd.openxmlformats-officedocument.wordprocessingml.document") || fileType.equals("image/jpeg") || fileType.equals("image/png") || fileType.equals("image/gif"))) {
+        if (!(fileType.equals("application/pdf")
+                || fileType.equals("application/msword")
+                || fileType.equals("application/vnd.openxmlformats-officedocument.wordprocessingml.document")
+                || fileType.equals("image/jpeg")
+                || fileType.equals("image/png")
+                || fileType.equals("image/gif"))
+        ) {
             logger.error("el tipo de archivo no es permitido");
             throw new IllegalArgumentException("el tipo de archivo no es permitido");
         }

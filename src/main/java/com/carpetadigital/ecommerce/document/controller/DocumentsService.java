@@ -571,6 +571,10 @@ public class DocumentsService {
         logger.info("Validando archivo: {}", file != null ? file.getOriginalFilename() : "Archivo es null");
         logger.info("Tipo de contenido: {}", file != null ? file.getContentType() : "ContentType es null");
         logger.info("Formato esperado: {}", documento != null ? documento.getFormat() : "Formato es null");
+        logger.info("MimeType esperado: {}", URLConnection.guessContentTypeFromName(file.getOriginalFilename()) != null ? URLConnection.guessContentTypeFromName(file.getOriginalFilename()) : "MimeType inexistente");
+        logger.info("baseName esperado: {}", file.getOriginalFilename() != null ? file.getOriginalFilename().substring(0, file.getOriginalFilename().lastIndexOf(".")) : "fileName incorrecto");
+        logger.info("extensión esperada: {}", file.getOriginalFilename().substring(file.getOriginalFilename().lastIndexOf(".") + 1) != null ? file.getOriginalFilename().substring(file.getOriginalFilename().lastIndexOf(".") + 1) : "error en la extensión" );
+
 
         if (file == null || file.isEmpty()) {
             logger.error("Archivo nulo o vacío");

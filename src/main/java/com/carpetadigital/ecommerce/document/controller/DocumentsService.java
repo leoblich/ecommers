@@ -472,7 +472,7 @@ public class DocumentsService {
 
             try {
                 // Llama al script de Python para convertir el archivo
-                ProcessBuilder processBuilder = new ProcessBuilder("python", scriptPath, tempFile.getAbsolutePath(), outputFilePath, baseName);
+                ProcessBuilder processBuilder = new ProcessBuilder("python3", scriptPath, tempFile.getAbsolutePath(), outputFilePath, baseName);
                 Process process = processBuilder.start();
 
                 CompletableFuture<Void> outputFuture = CompletableFuture.runAsync(() -> {
@@ -566,6 +566,7 @@ public class DocumentsService {
 
     // validaciones del archivo que ingresa
     private String validarArchivo(MultipartFile file, DocumentDto documento) {
+        logger.info("docuemnto completo{}", String.valueOf(documento));
 
         logger.info("Validando archivo: {}", file != null ? file.getOriginalFilename() : "Archivo es null");
         logger.info("Tipo de contenido: {}", file != null ? file.getContentType() : "ContentType es null");

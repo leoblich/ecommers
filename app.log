@@ -149,3 +149,193 @@
 2024-11-22T11:05:43.053-03:00  INFO 13864 --- [ecommerce-docs] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-11-22T11:05:43.058-03:00  INFO 13864 --- [ecommerce-docs] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2024-11-22T11:05:44.808-03:00  INFO 13864 --- [ecommerce-docs] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-11-22T11:05:49.588-03:00  INFO 1756 --- [ecommerce-docs] [main] c.c.ecommerce.EcommerceDocsApplication   : Starting EcommerceDocsApplication using Java 22.0.2 with PID 1756 (C:\PROYECTO_PERCY\duplicado\target\classes started by Isma Notebook in C:\PROYECTO_PERCY\duplicado)
+2024-11-22T11:05:49.593-03:00  INFO 1756 --- [ecommerce-docs] [main] c.c.ecommerce.EcommerceDocsApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-11-22T11:05:52.410-03:00  INFO 1756 --- [ecommerce-docs] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-22T11:05:52.623-03:00  INFO 1756 --- [ecommerce-docs] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 194 ms. Found 8 JPA repository interfaces.
+2024-11-22T11:05:54.092-03:00  INFO 1756 --- [ecommerce-docs] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-11-22T11:05:54.127-03:00  INFO 1756 --- [ecommerce-docs] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-11-22T11:05:54.127-03:00  INFO 1756 --- [ecommerce-docs] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-11-22T11:05:54.316-03:00  INFO 1756 --- [ecommerce-docs] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-11-22T11:05:54.317-03:00  INFO 1756 --- [ecommerce-docs] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4618 ms
+2024-11-22T11:05:54.670-03:00  INFO 1756 --- [ecommerce-docs] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-22T11:05:54.814-03:00  INFO 1756 --- [ecommerce-docs] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-22T11:05:54.961-03:00  INFO 1756 --- [ecommerce-docs] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-11-22T11:05:55.641-03:00  INFO 1756 --- [ecommerce-docs] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-22T11:05:55.716-03:00  INFO 1756 --- [ecommerce-docs] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-11-22T11:05:57.615-03:00  INFO 1756 --- [ecommerce-docs] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1b8d20e6
+2024-11-22T11:05:57.618-03:00  INFO 1756 --- [ecommerce-docs] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-11-22T11:05:57.861-03:00  WARN 1756 --- [ecommerce-docs] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-11-22T11:06:00.198-03:00  INFO 1756 --- [ecommerce-docs] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-22T11:06:06.455-03:00  INFO 1756 --- [ecommerce-docs] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-22T11:06:07.190-03:00  INFO 1756 --- [ecommerce-docs] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-11-22T11:06:07.191-03:00  WARN 1756 --- [ecommerce-docs] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-11-22T11:06:07.333-03:00  INFO 1756 --- [ecommerce-docs] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-22T11:06:08.927-03:00  WARN 1756 --- [ecommerce-docs] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-22T11:06:09.244-03:00 DEBUG 1756 --- [ecommerce-docs] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 38 mappings in 'requestMappingHandlerMapping'
+2024-11-22T11:06:09.417-03:00 DEBUG 1756 --- [ecommerce-docs] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-11-22T11:06:09.776-03:00 DEBUG 1756 --- [ecommerce-docs] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-11-22T11:06:09.898-03:00 DEBUG 1756 --- [ecommerce-docs] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-11-22T11:06:10.333-03:00  INFO 1756 --- [ecommerce-docs] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-11-22T11:06:10.359-03:00  INFO 1756 --- [ecommerce-docs] [main] c.c.ecommerce.EcommerceDocsApplication   : Started EcommerceDocsApplication in 22.073 seconds (process running for 23.465)
+2024-11-22T11:06:33.840-03:00  INFO 1756 --- [ecommerce-docs] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-11-22T11:06:33.840-03:00  INFO 1756 --- [ecommerce-docs] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-11-22T11:06:33.841-03:00 DEBUG 1756 --- [ecommerce-docs] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-11-22T11:06:33.841-03:00 DEBUG 1756 --- [ecommerce-docs] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-11-22T11:06:33.841-03:00 DEBUG 1756 --- [ecommerce-docs] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-11-22T11:06:33.841-03:00 DEBUG 1756 --- [ecommerce-docs] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@50931911
+2024-11-22T11:06:33.842-03:00 DEBUG 1756 --- [ecommerce-docs] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@806a687
+2024-11-22T11:06:33.842-03:00 DEBUG 1756 --- [ecommerce-docs] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-11-22T11:06:33.843-03:00  INFO 1756 --- [ecommerce-docs] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2024-11-22T11:06:33.879-03:00 DEBUG 1756 --- [ecommerce-docs] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/document", parameters={multipart}
+2024-11-22T11:06:33.926-03:00 DEBUG 1756 --- [ecommerce-docs] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.carpetadigital.ecommerce.document.controller.DocumentsController#postDocument(DocumentDto)
+2024-11-22T11:06:34.076-03:00  INFO 1756 --- [ecommerce-docs] [http-nio-8080-exec-1] c.c.e.d.controller.DocumentsService      : categoría: archivo M con word 
+2024-11-22T11:06:34.077-03:00  INFO 1756 --- [ecommerce-docs] [http-nio-8080-exec-1] c.c.e.d.controller.DocumentsService      : hola mundo: C:/PROYECTO_PERCY/pruebaparadeployar/convertidor/src/main/resources/conversorLibreOffice.py
+2024-11-22T11:06:34.079-03:00  INFO 1756 --- [ecommerce-docs] [http-nio-8080-exec-1] c.c.e.d.controller.DocumentsService      : file: org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@22f89e7e
+2024-11-22T11:06:34.090-03:00  INFO 1756 --- [ecommerce-docs] [http-nio-8080-exec-1] c.c.e.d.controller.DocumentsService      : documento: DocumentDto(id=null, imagenNameId=null, imagenUrlPublic=null, imagenUrlprivate=null, imageCreateTime=null, fileNameId=null, fileUrlPublic=null, fileUrlPrivate=null, fileDownLoadToken=null, fileCreateTime=null, borradoLogico=false, numeroDePaginas=0, countLikes=0, countPreView=0, title=archivo M con word, description=prueba  base de datos, format=docx, price=22.9, category=PRUEBA, file=org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@22f89e7e)
+2024-11-22T11:06:34.347-03:00  INFO 1756 --- [ecommerce-docs] [http-nio-8080-exec-1] c.c.e.d.controller.DocumentsService      : entre a guardar documento
+2024-11-22T11:06:34.356-03:00  INFO 1756 --- [ecommerce-docs] [http-nio-8080-exec-1] c.c.e.d.controller.DocumentsService      : respuesta de validación: true
+2024-11-22T11:06:35.119-03:00 ERROR 1756 --- [ecommerce-docs] [http-nio-8080-exec-1] c.c.e.d.controller.DocumentsService      : ILLegalArgumentException: --->  {}
+
+java.lang.IllegalArgumentException: documento existente
+	at com.carpetadigital.ecommerce.document.controller.DocumentsService.guardarDocument(DocumentsService.java:77) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355) ~[spring-aop-6.1.13.jar:6.1.13]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196) ~[spring-aop-6.1.13.jar:6.1.13]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) ~[spring-aop-6.1.13.jar:6.1.13]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768) ~[spring-aop-6.1.13.jar:6.1.13]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:379) ~[spring-tx-6.1.13.jar:6.1.13]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.1.13.jar:6.1.13]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.13.jar:6.1.13]
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768) ~[spring-aop-6.1.13.jar:6.1.13]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720) ~[spring-aop-6.1.13.jar:6.1.13]
+	at com.carpetadigital.ecommerce.document.controller.DocumentsService$$SpringCGLIB$$0.guardarDocument(<generated>) ~[classes/:na]
+	at com.carpetadigital.ecommerce.document.controller.DocumentsController.postDocument(DocumentsController.java:143) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.13.jar:6.1.13]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.13.jar:6.1.13]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.13.jar:6.1.13]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.13.jar:6.1.13]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.13.jar:6.1.13]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.13.jar:6.1.13]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.13.jar:6.1.13]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.13.jar:6.1.13]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.30.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.13.jar:6.1.13]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.30.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.30.jar:10.1.30]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at com.carpetadigital.ecommerce.Auth.Jwt.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:32) ~[classes/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:227) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:221) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter.doFilterInternal(OAuth2AuthorizationRequestRedirectFilter.java:198) ~[spring-security-oauth2-client-6.3.3.jar:6.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.3.3.jar:6.3.3]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195) ~[spring-webmvc-6.1.13.jar:6.1.13]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230) ~[spring-security-config-6.3.3.jar:6.3.3]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at java.base/java.lang.Thread.run(Thread.java:1570) ~[na:na]
+
+2024-11-22T11:06:35.170-03:00 DEBUG 1756 --- [ecommerce-docs] [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-11-22T11:06:35.172-03:00 DEBUG 1756 --- [ecommerce-docs] [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{result=true, data=null, timestamp=2024-11-22T11:06:35.135Z, status=201}]
+2024-11-22T11:06:35.202-03:00 DEBUG 1756 --- [ecommerce-docs] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 201 CREATED
+2024-11-22T11:09:36.035-03:00 DEBUG 1756 --- [ecommerce-docs] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/document", parameters={multipart}
+2024-11-22T11:09:36.056-03:00 DEBUG 1756 --- [ecommerce-docs] [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.carpetadigital.ecommerce.document.controller.DocumentsController#postDocument(DocumentDto)
+2024-11-22T11:09:36.059-03:00  INFO 1756 --- [ecommerce-docs] [http-nio-8080-exec-4] c.c.e.d.controller.DocumentsService      : categoría: archivo probando validación 
+2024-11-22T11:09:36.060-03:00  INFO 1756 --- [ecommerce-docs] [http-nio-8080-exec-4] c.c.e.d.controller.DocumentsService      : hola mundo: C:/PROYECTO_PERCY/pruebaparadeployar/convertidor/src/main/resources/conversorLibreOffice.py
+2024-11-22T11:09:36.060-03:00  INFO 1756 --- [ecommerce-docs] [http-nio-8080-exec-4] c.c.e.d.controller.DocumentsService      : file: org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@6d76e9b
+2024-11-22T11:09:36.060-03:00  INFO 1756 --- [ecommerce-docs] [http-nio-8080-exec-4] c.c.e.d.controller.DocumentsService      : documento: DocumentDto(id=null, imagenNameId=null, imagenUrlPublic=null, imagenUrlprivate=null, imageCreateTime=null, fileNameId=null, fileUrlPublic=null, fileUrlPrivate=null, fileDownLoadToken=null, fileCreateTime=null, borradoLogico=false, numeroDePaginas=0, countLikes=0, countPreView=0, title=archivo probando validación, description=prueba  base de datos, format=docx, price=22.9, category=PRUEBA, file=org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@6d76e9b)
+2024-11-22T11:09:36.250-03:00  INFO 1756 --- [ecommerce-docs] [http-nio-8080-exec-4] c.c.e.d.controller.DocumentsService      : entre a guardar documento
+2024-11-22T11:09:36.251-03:00  INFO 1756 --- [ecommerce-docs] [http-nio-8080-exec-4] c.c.e.d.controller.DocumentsService      : respuesta de validación: true
+2024-11-22T11:09:36.456-03:00  INFO 1756 --- [ecommerce-docs] [http-nio-8080-exec-4] c.c.e.d.controller.DocumentsService      : llamo script de python
+2024-11-22T11:09:54.178-03:00  INFO 1756 --- [ecommerce-docs] [ForkJoinPool.commonPool-worker-1] c.c.e.d.controller.DocumentsService      : Archivo temporal eliminado exitosamente.
+2024-11-22T11:09:54.178-03:00  INFO 1756 --- [ecommerce-docs] [http-nio-8080-exec-4] c.c.e.d.controller.DocumentsService      : volviendo del script de python
+2024-11-22T11:09:54.190-03:00  INFO 1756 --- [ecommerce-docs] [http-nio-8080-exec-4] c.c.e.d.controller.DocumentsService      : saco imagen pre-vista
+2024-11-22T11:09:55.342-03:00  INFO 1756 --- [ecommerce-docs] [http-nio-8080-exec-4] c.c.e.d.controller.DocumentsService      : guardo archivo
+2024-11-22T11:09:58.941-03:00  INFO 1756 --- [ecommerce-docs] [http-nio-8080-exec-4] c.c.e.d.controller.DocumentsService      : guardo imagen
+2024-11-22T11:10:00.791-03:00  INFO 1756 --- [ecommerce-docs] [http-nio-8080-exec-4] c.c.e.d.controller.DocumentsService      : guardo en base de datos 
+2024-11-22T11:10:01.098-03:00 ERROR 1756 --- [ecommerce-docs] [http-nio-8080-exec-4] c.c.e.d.controller.DocumentsService      : El archivo fue eliminado PDF correctamente: 
+2024-11-22T11:10:01.301-03:00 DEBUG 1756 --- [ecommerce-docs] [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-11-22T11:10:01.314-03:00 DEBUG 1756 --- [ecommerce-docs] [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{result=true, data=DocumentsEntity(id=63, title=archivo probando validación, description=prueba  bas (truncated)...]
+2024-11-22T11:10:01.378-03:00 DEBUG 1756 --- [ecommerce-docs] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 201 CREATED

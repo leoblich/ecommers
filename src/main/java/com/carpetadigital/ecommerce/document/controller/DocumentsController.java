@@ -1,5 +1,6 @@
 package com.carpetadigital.ecommerce.document.controller;
 
+import com.carpetadigital.ecommerce.entity.DocumentsEntity;
 import com.carpetadigital.ecommerce.entity.dto.Document.DocumentDto;
 import com.carpetadigital.ecommerce.Repository.DocumentsRepository;
 import com.carpetadigital.ecommerce.utils.handler.ResponseHandler;
@@ -118,8 +119,11 @@ public class DocumentsController {
     @PostMapping()
     public Object postDocument(@ModelAttribute @Validated DocumentDto documentDto) throws GeneralSecurityException, IOException {
         MultipartFile file = documentDto.getFile();
-        logger.info(documentDto.getTitle());
-
+        logger.info("categoría: {} ", documentDto.getTitle());
+        if (file == null || file.isEmpty()) {
+            logger.error("El archivo es nulo o está vacío");
+            throw new IllegalArgumentException("El archivo debe ser proporcionado y no puede estar vacío");
+        }
 
         logger.info("hola mundo: {}", scriptPath);
         if (scriptPath == null || scriptPath.isEmpty()) {
@@ -131,12 +135,24 @@ public class DocumentsController {
             logger.error("El archivo o directorio {} no existe", scriptPath);
             throw new IllegalStateException("El archivo o directorio configurado en script.path no existe");
         }
+        Object respuesta = null;
+        logger.info("file: {}", file);
+        logger.info("documento: {}", documentDto);
+        try {
+
+            respuesta = documentsService.guardarDocument(documentDto, new File(scriptPath));
+        } catch (IOException e) {
+            logger.error("IOEcception: --->  {}", e);
+        } catch (IllegalArgumentException exception) {
+            logger.error("ILLegalArgumentException: --->  {}", exception);
+        }
         return ResponseHandler.generateResponse(
                 HttpStatus.CREATED,
-                documentsService.guardarDocument(documentDto, new File(scriptPath)),
+                respuesta,
+//                documentsService.guardarDocument(documentDto, new File(scriptPath)),
                 true
-                 );
-   }
+        );
+    }
 
     // borrado lógico del documento
     @DeleteMapping("/{id}")

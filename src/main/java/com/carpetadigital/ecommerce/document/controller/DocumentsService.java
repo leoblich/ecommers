@@ -5,6 +5,7 @@ import com.carpetadigital.ecommerce.Firebase.ResFirebase;
 import com.carpetadigital.ecommerce.entity.DocumentsEntity;
 import com.carpetadigital.ecommerce.entity.dto.Document.*;
 import com.carpetadigital.ecommerce.Repository.DocumentsRepository;
+import com.carpetadigital.ecommerce.utils.exception.GlobalExceptionHandler;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
@@ -61,12 +62,13 @@ public class DocumentsService {
     // servicio para guardar un documento en base de datos
     @Transactional
     public Object guardarDocument(DocumentDto documento, File scriptResource) throws GeneralSecurityException, IOException {
-
+        logger.info("entre a guardar documento");
         MultipartFile file = documento.getFile();
         String nombreArchivo = baseNameFile(file);
 
         // valido el archivo
-        validarArchivo(file, documento);
+        logger.info("validación del file: {}", validarArchivo(file, documento));
+        ;
 
         // busco el archivo en base de datos
         Optional<DocumentsEntity> tituloEncontrado = documentsRepository.findByTitle(documento.getTitle());
@@ -85,6 +87,11 @@ public class DocumentsService {
         String fileType = file.getContentType();
         String fileName = UUID.randomUUID() + "_" + file.getOriginalFilename();
         String baseName = fileName != null ? fileName.substring(0, fileName.lastIndexOf(".")) : "file";
+        String extension = fileName.substring(fileName.lastIndexOf(".") + 1);
+        logger.info("fileType: {}", fileType);
+        logger.info("filename: {}", fileName);
+        logger.info("baseName: {}", baseName);
+        logger.info("extensión: {}", extension);
 
         byte[] fileParaTrabajar = file.getBytes();
         try {
@@ -136,6 +143,7 @@ public class DocumentsService {
             respuesta = documentsRepository.save(datosIngreso);
 
         } catch (IOException e) {
+            logger.error("error en el trycatch de docx: {}", e);
             throw new RuntimeException(e);
         } finally {
             if (tempFileGuargar != null && tempFileGuargar.exists() && !tempFileGuargar.delete()) {
@@ -382,7 +390,7 @@ public class DocumentsService {
         Page<DocumentsEntity> masRecientes = documentsRepository.findAllByOrderByFileCreateTimeDesc(pageable);
         return masRecientes.stream()
                 .distinct()
-                .map(this:: prepararRespuestaLosMas)
+                .map(this::prepararRespuestaLosMas)
                 .collect(Collectors.toList());
     }
 
@@ -402,7 +410,7 @@ public class DocumentsService {
 
         return masVendidos.stream()
                 .distinct()
-                .map(this:: prepararRespuestaLosMas)
+                .map(this::prepararRespuestaLosMas)
                 .collect(Collectors.toList());
     }
 

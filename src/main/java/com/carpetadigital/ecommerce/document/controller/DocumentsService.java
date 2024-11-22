@@ -64,16 +64,17 @@ public class DocumentsService {
     public Object guardarDocument(DocumentDto documento, File scriptResource) throws GeneralSecurityException, IOException {
         logger.info("entre a guardar documento");
         MultipartFile file = documento.getFile();
-        String fileName = file.getOriginalFilename();
+        String fileNameOriginal = file.getOriginalFilename();
 
-        logger.info("fileName: {}", fileName);
+        logger.info("fileName: {}", fileNameOriginal);
         // saco nombre del archivo
-        logger.info("nombre archivo: {}", fileName.substring(0, fileName.lastIndexOf(".")));;
+        logger.info("nombre archivo: {}", fileNameOriginal.substring(0, fileNameOriginal.lastIndexOf(".")));;
 //        String nombreArchivo = baseNameFile(file);
 
         // valido el archivo
         logger.info("validación del file: {}", validarArchivo(file, documento));
-        ;
+
+        String nombreArchivo= fileNameOriginal.substring(0, fileNameOriginal.lastIndexOf("."));
 
         // busco el archivo en base de datos
         Optional<DocumentsEntity> tituloEncontrado = documentsRepository.findByTitle(documento.getTitle());

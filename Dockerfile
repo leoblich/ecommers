@@ -24,7 +24,7 @@ WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 
 # Copiar el script de Python y el archivo requirements.txt
-COPY src/main/resources/conversorLibreOffice.py  /app/conversorLibreOffice.py
+COPY src/main/resources/conversorLibreOffice.py /app/conversorLibreOffice.py
 COPY requirements.txt ./requirements.txt
 
 # Instalar las dependencias de Python

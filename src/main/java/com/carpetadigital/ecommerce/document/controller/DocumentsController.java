@@ -3,6 +3,8 @@ package com.carpetadigital.ecommerce.document.controller;
 import com.carpetadigital.ecommerce.entity.dto.Document.DocumentDto;
 import com.carpetadigital.ecommerce.Repository.DocumentsRepository;
 import com.carpetadigital.ecommerce.utils.handler.ResponseHandler;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ClassPathResource;
@@ -23,6 +25,10 @@ import java.security.GeneralSecurityException;
 @RestController
 @RequestMapping("/api/v1/document")
 public class DocumentsController {
+
+//    https://ecommers-9tn0.onrender.com
+
+    private static final Logger logger = LoggerFactory.getLogger(DocumentsService.class);
 
     @Value("${script.path}")
     private String scriptPath;
@@ -74,9 +80,9 @@ public class DocumentsController {
             @RequestParam(defaultValue = "6") int cantElementos
     ) {
         return ResponseHandler.generateResponse(
-            HttpStatus.OK,
-            documentsService.buscarMasReciente(pagina - 1, cantElementos),
-            true
+                HttpStatus.OK,
+                documentsService.buscarMasReciente(pagina - 1, cantElementos),
+                true
         );
     }
 
@@ -87,9 +93,9 @@ public class DocumentsController {
             @RequestParam(defaultValue = "6") int cantElementos
     ) {
         return ResponseHandler.generateResponse(
-            HttpStatus.OK,
-            documentsService.buscarLosMasVistos(pagina - 1, cantElementos),
-            true
+                HttpStatus.OK,
+                documentsService.buscarLosMasVistos(pagina - 1, cantElementos),
+                true
         );
     }
 
@@ -98,8 +104,8 @@ public class DocumentsController {
     public Object masvendidos(
             @RequestParam(defaultValue = "1") int pagina,
             @RequestParam(defaultValue = "6") int cantElementos
-    ){
-        return  ResponseHandler.generateResponse(
+    ) {
+        return ResponseHandler.generateResponse(
                 HttpStatus.OK,
                 documentsService.masvendidos(pagina - 1, cantElementos),
                 true
@@ -110,8 +116,11 @@ public class DocumentsController {
     // guardado de un documento
     @PostMapping()
     public Object postDocument(@ModelAttribute @Validated DocumentDto documentDto) throws GeneralSecurityException, IOException {
-        if(scriptPath == null || scriptPath.isEmpty()) {
-            throw new IllegalStateException("La propiedad script.path no está configurada");
+        logger.info(scriptPath);
+        logger.info("entre al post");
+        if (scriptPath == null || scriptPath.isEmpty()) {
+            logger.error("La propiedad script.path no está configurada");
+            throw new IllegalStateException();
         }
         return ResponseHandler.generateResponse(
                 HttpStatus.CREATED,
@@ -145,14 +154,14 @@ public class DocumentsController {
     // actualización de un documento
     @PutMapping("/{id}")
     public ResponseEntity<Object> actualizacionDocument(@PathVariable Long id, @ModelAttribute DocumentDto documentDto) throws Exception {
-        if(scriptPath == null || scriptPath.isEmpty()) {
+        if (scriptPath == null || scriptPath.isEmpty()) {
             throw new IllegalStateException("La propiedad script.path no está configurada");
         }
         return ResponseHandler.generateResponse(
                 HttpStatus.OK,
                 documentsService.actualizacionDocument(id, documentDto, new File(scriptPath)),
                 true
-                );
+        );
     }
 
     // sumar un likes

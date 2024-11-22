@@ -116,8 +116,11 @@ public class DocumentsController {
     // guardado de un documento
     @PostMapping()
     public Object postDocument(@ModelAttribute @Validated DocumentDto documentDto) throws GeneralSecurityException, IOException {
-        logger.info(scriptPath);
-        logger.info("entre al post");
+        File scriptFile = new File(scriptPath);
+        if (!scriptFile.exists()) {
+            logger.error("El archivo o directorio {} no existe", scriptPath);
+            throw new IllegalStateException("El archivo o directorio configurado en script.path no existe");
+        }
         if (scriptPath == null || scriptPath.isEmpty()) {
             logger.error("La propiedad script.path no está configurada");
             throw new IllegalStateException();

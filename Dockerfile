@@ -24,7 +24,7 @@ WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 
 # Copiar el script de Python y el archivo requirements.txt
-COPY src/main/resources/conversorLibreOffice.py /app/conversorLibreOffice.py
+COPY src/main/resources/conversorLibreOffice.py  /app/conversorLibreOffice.py
 COPY requirements.txt ./requirements.txt
 
 # Instalar las dependencias de Python
@@ -32,6 +32,8 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 
 # Exponer el puerto de la aplicación Java
 EXPOSE 8080
+
+ENV SCRIPT_PATH=/app/conversorLibreOffice.py  # Establecer la variable de entorno
 
 # Iniciar la aplicación Java
 ENTRYPOINT ["java", "-jar", "app.jar"]

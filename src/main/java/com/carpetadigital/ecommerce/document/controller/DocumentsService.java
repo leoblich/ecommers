@@ -64,7 +64,12 @@ public class DocumentsService {
     public Object guardarDocument(DocumentDto documento, File scriptResource) throws GeneralSecurityException, IOException {
         logger.info("entre a guardar documento");
         MultipartFile file = documento.getFile();
-        String nombreArchivo = baseNameFile(file);
+        String fileName = file.getOriginalFilename();
+
+        logger.info("fileName: {}", fileName);
+        // saco nombre del archivo
+        logger.info("nombre archivo: {}", fileName.substring(0, fileName.lastIndexOf(".")));;
+//        String nombreArchivo = baseNameFile(file);
 
         // valido el archivo
         logger.info("validación del file: {}", validarArchivo(file, documento));

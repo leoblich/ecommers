@@ -13,6 +13,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
@@ -116,6 +117,11 @@ public class DocumentsController {
     // guardado de un documento
     @PostMapping()
     public Object postDocument(@ModelAttribute @Validated DocumentDto documentDto) throws GeneralSecurityException, IOException {
+        MultipartFile file = documentDto.getFile();
+        logger.info(documentDto.getTitle());
+
+
+        logger.info("hola mundo: {}", scriptPath);
         if (scriptPath == null || scriptPath.isEmpty()) {
             logger.error("La propiedad script.path no está configurada");
             throw new IllegalStateException();

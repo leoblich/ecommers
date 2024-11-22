@@ -64,17 +64,11 @@ public class DocumentsService {
     public Object guardarDocument(DocumentDto documento, File scriptResource) throws GeneralSecurityException, IOException {
         logger.info("entre a guardar documento");
         MultipartFile file = documento.getFile();
-        String fileNameOriginal = file.getOriginalFilename();
+        String nombreArchivo = baseNameFile(file);
 
-        logger.info("fileName: {}", fileNameOriginal);
-        // saco nombre del archivo
-        logger.info("nombre archivo: {}", fileNameOriginal.substring(0, fileNameOriginal.lastIndexOf(".")));;
-//        String nombreArchivo = baseNameFile(file);
+        String validacion = validarArchivo(file, documento);
 
-        // valido el archivo
-//        logger.info("validación del file: {}", validarArchivo(file, documento));
-
-        String nombreArchivo= fileNameOriginal.substring(0, fileNameOriginal.lastIndexOf("."));
+        logger.info("respuesta de validación: {}", validacion);
 
         // busco el archivo en base de datos
         Optional<DocumentsEntity> tituloEncontrado = documentsRepository.findByTitle(documento.getTitle());
@@ -93,11 +87,6 @@ public class DocumentsService {
         String fileType = file.getContentType();
         String fileName = UUID.randomUUID() + "_" + file.getOriginalFilename();
         String baseName = fileName != null ? fileName.substring(0, fileName.lastIndexOf(".")) : "file";
-        String extension = fileName.substring(fileName.lastIndexOf(".") + 1);
-        logger.info("fileType: {}", fileType);
-        logger.info("filename: {}", fileName);
-        logger.info("baseName: {}", baseName);
-        logger.info("extensión: {}", extension);
 
         byte[] fileParaTrabajar = file.getBytes();
         try {
@@ -576,19 +565,21 @@ public class DocumentsService {
     }
 
     // validaciones del archivo que ingresa
-    private boolean validarArchivo(MultipartFile file, DocumentDto documento) {
+    private String validarArchivo(MultipartFile file, DocumentDto documento) {
 
         // compruebo si el archivo viene vacío o no viene
         if (file == null || file.isEmpty()) {
             logger.error("error de recepción de archivo");
-            throw new IllegalArgumentException("error de recepción de archivo");
+            return "error de recepción de archivo";
+//            throw new IllegalArgumentException("error de recepción de archivo");
         }
 
         // saco el nombre del archivo
         String fileName = file.getOriginalFilename();
         if (fileName == null || !fileName.contains(".")) {
             logger.error("el nombre del archivo no tiene una extensión válida");
-            throw new IllegalArgumentException("el nombre del archivo no tiene una extensión válida");
+            return "el nombre del archivo no tiene una extensión válida";
+//            throw new IllegalArgumentException("el nombre del archivo no tiene una extensión válida");
         }
 
         // saco el tipo de archivo
@@ -606,7 +597,7 @@ public class DocumentsService {
         String format = documento.getFormat() != null ? documento.getFormat().trim().toLowerCase() : null;
         if (format == null || !extension.equalsIgnoreCase(format)) {
             logger.error("no corresponde el tipo de archivo con su formato");
-            throw new IllegalArgumentException("no corresponde el tipo de archivo con su formato");
+            return "no corresponde el tipo de archivo con su formato";
         }
 
         // compruebo que el contenido del archivo es de tipo pdf, word o imágen
@@ -618,14 +609,16 @@ public class DocumentsService {
                 || fileType.equals("image/gif"))
         ) {
             logger.error("el tipo de archivo no es permitido");
-            throw new IllegalArgumentException("el tipo de archivo no es permitido");
+            return "el tipo de archivo no es permitido";
+//            throw new IllegalArgumentException("el tipo de archivo no es permitido");
         }
         if (!ALLOWED_MIME_TYPES.contains(mimeType)) {
             logger.error("el tipo de archivo no es permitido");
-            throw new IllegalArgumentException("el tipo de archivo no es permitido");
+            return "el tipo de archivo no es permitido";
+//            throw new IllegalArgumentException("el tipo de archivo no es permitido");
         }
 
-        return true;
+        return "true";
     }
 
     // preparar la respuesta

@@ -33,7 +33,8 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 # Exponer el puerto de la aplicación Java
 EXPOSE 8080
 
-ENV SCRIPT_PATH=/app/conversorLibreOffice.py  # Establecer la variable de entorno
+# Establecer la variable de entorno
+ENV SCRIPT_PATH=/app/conversorLibreOffice.py
 
 # Iniciar la aplicación Java
 ENTRYPOINT ["java", "-jar", "app.jar"]

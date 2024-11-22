@@ -18,6 +18,12 @@ import java.util.Map;
 public class AuthController {
     private final AuthService authService;
 
+
+   @GetMapping("/login")
+   public boolean login() {
+       return true;
+   }
+
     @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping(value = "login")
     public ResponseEntity<AuthResponse> login(@RequestBody LoginRequest request){

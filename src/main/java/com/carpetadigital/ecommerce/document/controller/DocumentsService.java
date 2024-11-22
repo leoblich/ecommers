@@ -472,7 +472,7 @@ public class DocumentsService {
 
             try {
                 // Llama al script de Python para convertir el archivo
-                ProcessBuilder processBuilder = new ProcessBuilder("python3", scriptPath, tempFile.getAbsolutePath(), outputFilePath, baseName);
+                ProcessBuilder processBuilder = new ProcessBuilder("python", scriptPath, tempFile.getAbsolutePath(), outputFilePath, baseName);
                 Process process = processBuilder.start();
 
                 CompletableFuture<Void> outputFuture = CompletableFuture.runAsync(() -> {
@@ -567,56 +567,81 @@ public class DocumentsService {
     // validaciones del archivo que ingresa
     private String validarArchivo(MultipartFile file, DocumentDto documento) {
 
-        // compruebo si el archivo viene vacío o no viene
+        logger.info("Validando archivo: {}", file != null ? file.getOriginalFilename() : "Archivo es null");
+        logger.info("Tipo de contenido: {}", file != null ? file.getContentType() : "ContentType es null");
+        logger.info("Formato esperado: {}", documento != null ? documento.getFormat() : "Formato es null");
+
         if (file == null || file.isEmpty()) {
-            logger.error("error de recepción de archivo");
-            return "error de recepción de archivo";
-//            throw new IllegalArgumentException("error de recepción de archivo");
+            logger.error("Archivo nulo o vacío");
+            return "Archivo nulo o vacío";
         }
 
-        // saco el nombre del archivo
         String fileName = file.getOriginalFilename();
         if (fileName == null || !fileName.contains(".")) {
-            logger.error("el nombre del archivo no tiene una extensión válida");
-            return "el nombre del archivo no tiene una extensión válida";
-//            throw new IllegalArgumentException("el nombre del archivo no tiene una extensión válida");
+            logger.error("Nombre del archivo es nulo o no tiene extensión");
+            return "Nombre del archivo es nulo o no tiene extensión";
         }
 
-        // saco el tipo de archivo
-        String fileType = file.getContentType();
-
-        // Usa URLConnection para detectar el tipo MIME
-        String mimeType = URLConnection.guessContentTypeFromName(file.getOriginalFilename());
-
-        String baseName = fileName != null ? fileName.substring(0, fileName.lastIndexOf(".")) : "file";
-
-        String extension = fileName.substring(fileName.lastIndexOf(".") + 1);
-
-
-        // compruebo si el archivo corresponde con el formato (format)
-        String format = documento.getFormat() != null ? documento.getFormat().trim().toLowerCase() : null;
-        if (format == null || !extension.equalsIgnoreCase(format)) {
-            logger.error("no corresponde el tipo de archivo con su formato");
-            return "no corresponde el tipo de archivo con su formato";
+        String format = documento.getFormat();
+        if (format == null) {
+            logger.error("Formato esperado es nulo");
+            return "Formato esperado es nulo";
         }
 
-        // compruebo que el contenido del archivo es de tipo pdf, word o imágen
-        if (!(fileType.equals("application/pdf")
-                || fileType.equals("application/msword")
-                || fileType.equals("application/vnd.openxmlformats-officedocument.wordprocessingml.document")
-                || fileType.equals("image/jpeg")
-                || fileType.equals("image/png")
-                || fileType.equals("image/gif"))
-        ) {
-            logger.error("el tipo de archivo no es permitido");
-            return "el tipo de archivo no es permitido";
-//            throw new IllegalArgumentException("el tipo de archivo no es permitido");
+        if (!fileName.endsWith("." + format)) {
+            logger.error("El archivo no corresponde con el formato esperado");
+            return "El archivo no corresponde con el formato esperado";
         }
-        if (!ALLOWED_MIME_TYPES.contains(mimeType)) {
-            logger.error("el tipo de archivo no es permitido");
-            return "el tipo de archivo no es permitido";
-//            throw new IllegalArgumentException("el tipo de archivo no es permitido");
-        }
+//        // compruebo si el archivo viene vacío o no viene
+//        if (file == null || file.isEmpty()) {
+//            logger.error("error de recepción de archivo");
+//            return "error de recepción de archivo";
+////            throw new IllegalArgumentException("error de recepción de archivo");
+//        }
+//
+//        // saco el nombre del archivo
+//        String fileName = file.getOriginalFilename();
+//        if (fileName == null || !fileName.contains(".")) {
+//            logger.error("el nombre del archivo no tiene una extensión válida");
+//            return "el nombre del archivo no tiene una extensión válida";
+////            throw new IllegalArgumentException("el nombre del archivo no tiene una extensión válida");
+//        }
+//
+//        // saco el tipo de archivo
+//        String fileType = file.getContentType();
+//
+//        // Usa URLConnection para detectar el tipo MIME
+//        String mimeType = URLConnection.guessContentTypeFromName(file.getOriginalFilename());
+//
+//        String baseName = fileName != null ? fileName.substring(0, fileName.lastIndexOf(".")) : "file";
+//
+//        String extension = fileName.substring(fileName.lastIndexOf(".") + 1);
+//
+//
+//        // compruebo si el archivo corresponde con el formato (format)
+//        String format = documento.getFormat() != null ? documento.getFormat().trim().toLowerCase() : null;
+//        if (format == null || !extension.equalsIgnoreCase(format)) {
+//            logger.error("no corresponde el tipo de archivo con su formato");
+//            return "no corresponde el tipo de archivo con su formato";
+//        }
+//
+//        // compruebo que el contenido del archivo es de tipo pdf, word o imágen
+//        if (!(fileType.equals("application/pdf")
+//                || fileType.equals("application/msword")
+//                || fileType.equals("application/vnd.openxmlformats-officedocument.wordprocessingml.document")
+//                || fileType.equals("image/jpeg")
+//                || fileType.equals("image/png")
+//                || fileType.equals("image/gif"))
+//        ) {
+//            logger.error("el tipo de archivo no es permitido");
+//            return "el tipo de archivo no es permitido";
+////            throw new IllegalArgumentException("el tipo de archivo no es permitido");
+//        }
+//        if (!ALLOWED_MIME_TYPES.contains(mimeType)) {
+//            logger.error("el tipo de archivo no es permitido");
+//            return "el tipo de archivo no es permitido";
+////            throw new IllegalArgumentException("el tipo de archivo no es permitido");
+//        }
 
         return "true";
     }

@@ -109,3 +109,43 @@
 2024-11-22T01:05:13.033-03:00 DEBUG 3004 --- [ecommerce-docs] [http-nio-8080-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.IllegalStateException: El archivo o directorio configurado en script.path no existe]
 2024-11-22T01:05:13.034-03:00 DEBUG 3004 --- [ecommerce-docs] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 500 INTERNAL_SERVER_ERROR
 2024-11-22T08:23:58.028-03:00  WARN 3004 --- [ecommerce-docs] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6h41m57s278ms356µs400ns).
+2024-11-22T10:40:32.072-03:00 DEBUG 3004 --- [ecommerce-docs] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/document/recientes", parameters={}
+2024-11-22T10:40:32.087-03:00 DEBUG 3004 --- [ecommerce-docs] [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.carpetadigital.ecommerce.document.controller.DocumentsController#buscarMasReciente(int, int)
+2024-11-22T10:40:33.681-03:00 DEBUG 3004 --- [ecommerce-docs] [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-11-22T10:40:33.707-03:00 DEBUG 3004 --- [ecommerce-docs] [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{result=true, data=[DocumentLosMasDto(id=62, title=archivo M con word, format=docx, category=PRUEBA, (truncated)...]
+2024-11-22T10:40:33.736-03:00 DEBUG 3004 --- [ecommerce-docs] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-11-22T11:05:06.941-03:00  INFO 3004 --- [ecommerce-docs] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-22T11:05:06.985-03:00  INFO 3004 --- [ecommerce-docs] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-11-22T11:05:08.752-03:00  INFO 3004 --- [ecommerce-docs] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-11-22T11:05:21.940-03:00  INFO 13864 --- [ecommerce-docs] [main] c.c.ecommerce.EcommerceDocsApplication   : Starting EcommerceDocsApplication using Java 22.0.2 with PID 13864 (C:\PROYECTO_PERCY\duplicado\target\classes started by Isma Notebook in C:\PROYECTO_PERCY\duplicado)
+2024-11-22T11:05:21.945-03:00  INFO 13864 --- [ecommerce-docs] [main] c.c.ecommerce.EcommerceDocsApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-11-22T11:05:23.886-03:00  INFO 13864 --- [ecommerce-docs] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-11-22T11:05:24.706-03:00  INFO 13864 --- [ecommerce-docs] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 217 ms. Found 8 JPA repository interfaces.
+2024-11-22T11:05:26.209-03:00  INFO 13864 --- [ecommerce-docs] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-11-22T11:05:26.240-03:00  INFO 13864 --- [ecommerce-docs] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-11-22T11:05:26.240-03:00  INFO 13864 --- [ecommerce-docs] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-11-22T11:05:26.449-03:00  INFO 13864 --- [ecommerce-docs] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-11-22T11:05:26.450-03:00  INFO 13864 --- [ecommerce-docs] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4415 ms
+2024-11-22T11:05:26.729-03:00  INFO 13864 --- [ecommerce-docs] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-11-22T11:05:26.882-03:00  INFO 13864 --- [ecommerce-docs] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-11-22T11:05:26.997-03:00  INFO 13864 --- [ecommerce-docs] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-11-22T11:05:27.593-03:00  INFO 13864 --- [ecommerce-docs] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-11-22T11:05:27.655-03:00  INFO 13864 --- [ecommerce-docs] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-11-22T11:05:29.836-03:00  INFO 13864 --- [ecommerce-docs] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5a1a20ae
+2024-11-22T11:05:29.839-03:00  INFO 13864 --- [ecommerce-docs] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-11-22T11:05:30.095-03:00  WARN 13864 --- [ecommerce-docs] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-11-22T11:05:32.184-03:00  INFO 13864 --- [ecommerce-docs] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-11-22T11:05:38.822-03:00  INFO 13864 --- [ecommerce-docs] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-11-22T11:05:39.642-03:00  INFO 13864 --- [ecommerce-docs] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2024-11-22T11:05:39.644-03:00  WARN 13864 --- [ecommerce-docs] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2024-11-22T11:05:39.802-03:00  INFO 13864 --- [ecommerce-docs] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-11-22T11:05:41.715-03:00  WARN 13864 --- [ecommerce-docs] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-11-22T11:05:42.034-03:00 DEBUG 13864 --- [ecommerce-docs] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 38 mappings in 'requestMappingHandlerMapping'
+2024-11-22T11:05:42.217-03:00 DEBUG 13864 --- [ecommerce-docs] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-11-22T11:05:42.617-03:00 DEBUG 13864 --- [ecommerce-docs] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-11-22T11:05:42.679-03:00 DEBUG 13864 --- [ecommerce-docs] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-11-22T11:05:43.007-03:00  INFO 13864 --- [ecommerce-docs] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-11-22T11:05:43.029-03:00  INFO 13864 --- [ecommerce-docs] [main] c.c.ecommerce.EcommerceDocsApplication   : Started EcommerceDocsApplication in 22.219 seconds (process running for 23.372)
+2024-11-22T11:05:43.053-03:00  INFO 13864 --- [ecommerce-docs] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-11-22T11:05:43.058-03:00  INFO 13864 --- [ecommerce-docs] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-11-22T11:05:44.808-03:00  INFO 13864 --- [ecommerce-docs] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
